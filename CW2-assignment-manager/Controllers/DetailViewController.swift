@@ -169,7 +169,7 @@ class DetailViewController: UIViewController {
         if let selectedProject = assignment {
             
             projectTitleLabel.text = selectedProject.title
-            projectMetaLabel.text = (selectedProject.priority.getAsString()) + " Priority | Due " + Utilities.getFormattedDateString(for: selectedProject.dueDate, format: "yyyy-MM-dd")
+            projectMetaLabel.text = (selectedProject.level.getAsString()) + " Level | Due " + Utilities.getFormattedDateString(for: selectedProject.dueDate, format: "yyyy-MM-dd")
             projectNotesLabel.text = "Notes: " + selectedProject.notes!
             percentageCircleView.setProgress(CGFloat(selectedProject.progress.value), animated: true, duration: 1)
             percentageCircleView.progressBarProgressColor = selectedProject.progress.color

@@ -68,7 +68,7 @@ class MasterViewController: UITableViewController {
         
         cell.titleLabel.text = projects[indexPath.row].title
         cell.dueDateLabel.text = Utilities.getFormattedDateString(for: projects[indexPath.row].dueDate, format: "dd/MM/yy")
-        cell.priorityLabel.text = projects[indexPath.row].priority.getAsString()
+        cell.priorityLabel.text = projects[indexPath.row].level.getAsString()
         cell.notesLabel.text = projects[indexPath.row].notes
         cell.progressIndicatorView.backgroundColor = projects[indexPath.row].progress.color
         
@@ -114,7 +114,7 @@ class MasterViewController: UITableViewController {
             assignment.title = data.titleTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
-            assignment.priority = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
+            assignment.level = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
             assignment.notes = data.notesTextField.text!
 
             if !assignment.isAddedToCalendar && data.addToCalendarToggle.isOn {
@@ -130,7 +130,7 @@ class MasterViewController: UITableViewController {
             assignment.title = data.titleTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
-            assignment.priority = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
+            assignment.level = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
             assignment.notes = data.notesTextField.text!
 
             if data.addToCalendarToggle.isOn {
@@ -145,14 +145,18 @@ class MasterViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func assignPriority(for index: Int) -> ProjectPriority {
+    func assignPriority(for index: Int) -> AssignmentLevel {
         switch index {
         case 1:
-            return .Medium
+            return .four
         case 2:
-            return .High
+            return .five
+        case 3:
+            return .six
+        case 4:
+            return .seven
         default:
-            return .Low
+            return .three
         }
     }
     

@@ -41,7 +41,7 @@ class AddEditAssignmentViewController: UIViewController {
             titleTextField.text = assignment.title
             notesTextField.text = assignment.notes
             datePicker.date = assignment.startDate
-            prioritySegmentControl.selectedSegmentIndex = assignment.priority.rawValue
+            prioritySegmentControl.selectedSegmentIndex = assignment.level.rawValue
             addToCalendarToggle.isOn = !assignment.isAddedToCalendar
             addToCalendarToggle.isEnabled = !assignment.isAddedToCalendar
             

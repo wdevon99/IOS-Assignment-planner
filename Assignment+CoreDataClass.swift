@@ -11,17 +11,21 @@ import Foundation
 import UIKit
 import CoreData
 
-enum ProjectPriority: Int {
-    case Low, Medium, High
+enum AssignmentLevel: Int {
+    case three, four, five, six, seven
     
     func getAsString() -> String {
         switch self {
-        case .High:
-            return "High"
-        case .Medium:
-            return "Medium"
-        default:
-            return "Low"
+        case .three:
+            return "3"
+        case .four:
+            return "4"
+        case .five:
+            return "5"
+        case .six:
+            return "6"
+        case .seven:
+            return "7"
         }
     }
 }
@@ -47,12 +51,12 @@ public class Assignment: NSManagedObject {
         }
     }
     
-    var priority: ProjectPriority {
+    var level: AssignmentLevel {
         get {
-            return ProjectPriority(rawValue: Int(rawPriority))!
+            return AssignmentLevel(rawValue: Int(rawLevel))!
         }
-        set(newPriority) {
-            rawPriority = Int16(newPriority.rawValue)
+        set(newLevel) {
+            rawLevel = Int16(newLevel.rawValue)
         }
     }
     
