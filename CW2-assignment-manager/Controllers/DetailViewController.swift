@@ -241,7 +241,8 @@ extension DetailViewController: UITableViewDelegate {
             completion(true)
         }
         action.image = UIImage(named: "edit")
-        action.backgroundColor = .brown
+        action.image = action.image?.withTintColor(.white)
+        action.backgroundColor = .systemBlue
         return action
     }
     
@@ -258,7 +259,8 @@ extension DetailViewController: UITableViewDelegate {
             completion(true)
         }
         action.image = UIImage(named: "delete")
-        action.backgroundColor = .red
+        action.image = action.image?.withTintColor(.white)
+        action.backgroundColor = .systemRed
         return action
     }
 }
