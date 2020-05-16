@@ -19,7 +19,7 @@ class AddEditProjectViewController: UIViewController {
     
     var saveFunction: Utilities.saveFunctionType?
     var resetToDefaults: Utilities.resetToDefaultsFunctionType?
-    var projectPlaceholder: Project?
+    var projectPlaceholder: Assignment?
     var isEditView: Bool?
     var startDate: Date?
     var dueDate: Date?

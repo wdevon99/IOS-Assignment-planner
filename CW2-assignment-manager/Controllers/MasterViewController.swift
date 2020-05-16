@@ -10,7 +10,7 @@ import UIKit
 import EventKit
 
 protocol ProjectSelectionDelegate: class {
-    func projectSelected(_ newProject: Project)
+    func projectSelected(_ newProject: Assignment)
 }
 
 class ProjectCell: UITableViewCell {
@@ -26,13 +26,13 @@ class MasterViewController: UITableViewController {
     @IBOutlet weak var addProjectButton: UIBarButtonItem!
     
     weak var delegate: ProjectSelectionDelegate?
-    var projects: [Project]!
-    var projectPlaceholder: Project?
+    var projects: [Assignment]!
+    var projectPlaceholder: Assignment?
     var isEditView: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        projects = Utilities.fetchFromDBContext(entityName: "Project")
+        projects = Utilities.fetchFromDBContext(entityName: "Assignment")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -126,7 +126,7 @@ class MasterViewController: UITableViewController {
                 projects[projectIndex] = project
             }
         } else {
-            let project = Project(context: Utilities.getDBContext())
+            let project = Assignment(context: Utilities.getDBContext())
             project.title = data.titleTextField.text!
             project.startDate = data.startDate!
             project.dueDate = data.dueDate!
@@ -156,7 +156,7 @@ class MasterViewController: UITableViewController {
         }
     }
     
-    func addEventToCalendar (for project: Project) {
+    func addEventToCalendar (for project: Assignment) {
         let eventStore : EKEventStore = EKEventStore()
 
         eventStore.requestAccess(to: .event) { (granted, error) in

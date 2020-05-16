@@ -53,8 +53,8 @@ class AddEditTaskViewController: UIViewController {
             startDate = task.startDate
             dueDate = task.dueDate
             
-            datePicker.minimumDate = task.project?.startDate
-            datePicker.maximumDate = task.project?.dueDate
+            datePicker.minimumDate = task.assignment?.startDate
+            datePicker.maximumDate = task.assignment?.dueDate
         }
         
         titleTextField.becomeFirstResponder()

@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
     var tasks: [Task]!
     var taskPlaceholder: Task?
     var isEditView: Bool = false
-    var project: Project? {
+    var project: Assignment? {
         didSet {
             refreshUI()
         }
@@ -120,7 +120,7 @@ class DetailViewController: UIViewController {
                     task.dueDate = data.dueDate!
                     task.progress = data.progressSlider.value / 100
                     task.notes = data.notesTextField.text
-                    task.project = project
+                    task.assignment = project
             
             if data.addNotificationToggle.isOn {
                 addNotification(for: task)
@@ -145,7 +145,7 @@ class DetailViewController: UIViewController {
         }
         
         let content = UNMutableNotificationContent()
-        content.title = "Project: " + task.project!.title!
+        content.title = "Project: " + task.assignment!.title!
         content.body = "The following task has not been completed on time.\nTask: " + task.title! + "\nDue Date: " + Utilities.getFormattedDateString(for: task.dueDate, format: "yyyy-MM-dd")
         
         
@@ -256,7 +256,7 @@ extension DetailViewController: UITableViewDelegate {
 }
 
 extension DetailViewController: ProjectSelectionDelegate {
-    func projectSelected(_ newProject: Project) {
+    func projectSelected(_ newProject: Assignment) {
         project = newProject
     }
 }

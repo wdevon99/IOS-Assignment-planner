@@ -1,5 +1,5 @@
 //
-//  Project+CoreDataClass.swift
+//  Assignment+CoreDataClass.swift
 //  CW2-assignment-manager
 //
 //  Created by Devon Wijesinghe on 5/16/20.
@@ -27,8 +27,7 @@ enum ProjectPriority: Int {
 }
 
 @objc(Project)
-public class Project: NSManagedObject {
-    
+public class Assignment: NSManagedObject {
     
     var startDate: Date {
         get {
@@ -73,7 +72,7 @@ public class Project: NSManagedObject {
     }
 }
 
-extension Project {
+extension Assignment {
     override public func awakeFromInsert() {
         setPrimitiveValue(UUID().uuidString, forKey: "projectId")
     }
