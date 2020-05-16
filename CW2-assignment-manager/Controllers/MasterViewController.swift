@@ -13,7 +13,7 @@ protocol AssignmentSelectionDelegate: class {
     func assignmentSelected(_ newAssignment: Assignment)
 }
 
-class ProjectCell: UITableViewCell {
+class AssignmentCell: UITableViewCell {
     @IBOutlet weak var moduleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
@@ -23,7 +23,7 @@ class ProjectCell: UITableViewCell {
 
 class MasterViewController: UITableViewController {
     
-    @IBOutlet weak var addProjectButton: UIBarButtonItem!
+    @IBOutlet weak var addAssignmentButton: UIBarButtonItem!
     
     weak var delegate: AssignmentSelectionDelegate?
     var assignments: [Assignment]!
@@ -48,7 +48,7 @@ class MasterViewController: UITableViewController {
             popover?.resetToDefaults = { () in
                 self.isEditView = false
                 self.assignmentPlaceholder = nil
-                self.addProjectButton.image = UIImage(named: "add")
+                self.addAssignmentButton.image = UIImage(named: "add")
             }
         }
     }
@@ -64,7 +64,7 @@ class MasterViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell") as! ProjectCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AssignmentCell") as! AssignmentCell
         
         cell.moduleLabel.text = assignments[indexPath.row].module
         cell.titleLabel.text = assignments[indexPath.row].title
@@ -85,8 +85,8 @@ class MasterViewController: UITableViewController {
         let action = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion) in
             self.isEditView = true
             self.assignmentPlaceholder = self.assignments[indexPath.row]
-            self.addProjectButton.image = UIImage(named: "edit")
-            self.performSegue(withIdentifier: "projectViewSegue", sender: self)
+            self.addAssignmentButton.image = UIImage(named: "edit")
+            self.performSegue(withIdentifier: "assignmentViewSegue", sender: self)
             completion(true)
         }
         action.image = UIImage(named: "edit")

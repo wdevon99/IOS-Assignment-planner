@@ -33,14 +33,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var addTaskButton: UIButton!
     
-    // ==== NEW ====
     @IBOutlet weak var moduleLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    // =============
     
-    @IBOutlet weak var projectTitleLabel: UILabel!
-    @IBOutlet weak var projectMetaLabel: UILabel!
-    @IBOutlet weak var projectNotesLabel: UILabel!
+    @IBOutlet weak var assignmentTitleLabel: UILabel!
+    @IBOutlet weak var assignmentMetaLabel: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
     
     var tasks: [Task]!
     var taskPlaceholder: Task?
@@ -175,10 +173,10 @@ class DetailViewController: UIViewController {
         if let selectedAssignment = assignment {
             
             moduleLabel.text = selectedAssignment.module
-            projectTitleLabel.text = selectedAssignment.title
+            assignmentTitleLabel.text = selectedAssignment.title
             levelLabel.text = "Level " + selectedAssignment.level.getAsString()
-            projectMetaLabel.text = "Value: " + selectedAssignment.value! + " | Mark Awarded: " + selectedAssignment.markAwarded!
-            projectNotesLabel.text = "Notes: " + selectedAssignment.notes!
+            assignmentMetaLabel.text = "Value: " + selectedAssignment.value! + " | Mark Awarded: " + selectedAssignment.markAwarded!
+            notesLabel.text = "Notes: " + selectedAssignment.notes!
             percentageCircleView.setProgress(CGFloat(selectedAssignment.progress.value), animated: true, duration: 1)
             percentageCircleView.progressBarProgressColor = selectedAssignment.progress.color
             daysRemainingCircleView.setProgress(selectedAssignment.daysRemaining.value, animated: true, duration: 1)
