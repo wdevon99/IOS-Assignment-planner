@@ -1,5 +1,5 @@
 //
-//  AddEditProjectViewController.swift
+//  AddEditAssignmentViewController.swift
 //  CW2-assignment-manager
 //
 //  Created by Devon Wijesinghe on 5/16/20.

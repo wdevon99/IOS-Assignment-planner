@@ -76,8 +76,8 @@ class DetailViewController: UIViewController {
         daysRemainingCircleView.progressBarProgressColor = nil
         addTaskButton.isEnabled = false
         
-        if let selectedProject = assignment {
-            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.assignmentId = %@", selectedProject.assignmentId!))
+        if let selectedAssignment = assignment {
+            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.assignmentId = %@", selectedAssignment.assignmentId!))
         } else {
             tasks = Array()
         }
@@ -172,19 +172,19 @@ class DetailViewController: UIViewController {
     
     func refreshUI() {
         loadViewIfNeeded()
-        if let selectedProject = assignment {
+        if let selectedAssignment = assignment {
             
-            moduleLabel.text = selectedProject.module
-            projectTitleLabel.text = selectedProject.title
-            levelLabel.text = "Level " + selectedProject.level.getAsString()
-            projectMetaLabel.text = "Value: " + selectedProject.value! + " | Mark Awarded: " + selectedProject.markAwarded!
-            projectNotesLabel.text = "Notes: " + selectedProject.notes!
-            percentageCircleView.setProgress(CGFloat(selectedProject.progress.value), animated: true, duration: 1)
-            percentageCircleView.progressBarProgressColor = selectedProject.progress.color
-            daysRemainingCircleView.setProgress(selectedProject.daysRemaining.value, animated: true, duration: 1)
-            daysRemainingCircleView.progressBarTrackColor = selectedProject.daysRemaining.color
-            daysRemainingCircleView.progressBarProgressColor = selectedProject.daysRemaining.color
-            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.assignmentId = %@", selectedProject.assignmentId!))
+            moduleLabel.text = selectedAssignment.module
+            projectTitleLabel.text = selectedAssignment.title
+            levelLabel.text = "Level " + selectedAssignment.level.getAsString()
+            projectMetaLabel.text = "Value: " + selectedAssignment.value! + " | Mark Awarded: " + selectedAssignment.markAwarded!
+            projectNotesLabel.text = "Notes: " + selectedAssignment.notes!
+            percentageCircleView.setProgress(CGFloat(selectedAssignment.progress.value), animated: true, duration: 1)
+            percentageCircleView.progressBarProgressColor = selectedAssignment.progress.color
+            daysRemainingCircleView.setProgress(selectedAssignment.daysRemaining.value, animated: true, duration: 1)
+            daysRemainingCircleView.progressBarTrackColor = selectedAssignment.daysRemaining.color
+            daysRemainingCircleView.progressBarProgressColor = selectedAssignment.daysRemaining.color
+            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.assignmentId = %@", selectedAssignment.assignmentId!))
             tasksTableView.reloadData()
             addTaskButton.isEnabled = true
         }
@@ -265,9 +265,9 @@ extension DetailViewController: UITableViewDelegate {
     }
 }
 
-extension DetailViewController: ProjectSelectionDelegate {
-    func projectSelected(_ newProject: Assignment) {
-        assignment = newProject
+extension DetailViewController: AssignmentSelectionDelegate {
+    func assignmentSelected(_ newAssignment: Assignment) {
+        assignment = newAssignment
     }
 }
 

@@ -9,8 +9,8 @@
 import UIKit
 import EventKit
 
-protocol ProjectSelectionDelegate: class {
-    func projectSelected(_ newProject: Assignment)
+protocol AssignmentSelectionDelegate: class {
+    func assignmentSelected(_ newAssignment: Assignment)
 }
 
 class ProjectCell: UITableViewCell {
@@ -25,14 +25,14 @@ class MasterViewController: UITableViewController {
     
     @IBOutlet weak var addProjectButton: UIBarButtonItem!
     
-    weak var delegate: ProjectSelectionDelegate?
-    var projects: [Assignment]!
+    weak var delegate: AssignmentSelectionDelegate?
+    var assignments: [Assignment]!
     var assignmentPlaceholder: Assignment?
     var isEditView: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        projects = Utilities.fetchFromDBContext(entityName: "Assignment")
+        assignments = Utilities.fetchFromDBContext(entityName: "Assignment")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,7 +43,7 @@ class MasterViewController: UITableViewController {
             popover?.assignmentPlaceholder = assignmentPlaceholder
             popover?.delegate = self
             popover?.saveFunction = {(popoverViewController) in
-                self.saveProject(popoverViewController as! AddEditAssignmentViewController)
+                self.saveAssignment(popoverViewController as! AddEditAssignmentViewController)
             }
             popover?.resetToDefaults = { () in
                 self.isEditView = false
@@ -54,23 +54,23 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projects.count
+        return assignments.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedProject = projects[indexPath.row]
-        delegate?.projectSelected(selectedProject)
+        let selectedAssignment = assignments[indexPath.row]
+        delegate?.assignmentSelected(selectedAssignment)
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell") as! ProjectCell
         
-        cell.moduleLabel.text = projects[indexPath.row].module
-        cell.titleLabel.text = projects[indexPath.row].title
-        cell.dueDateLabel.text = Utilities.getFormattedDateString(for: projects[indexPath.row].dueDate, format: "dd/MM/yy")
-        cell.priorityLabel.text = projects[indexPath.row].level.getAsString()
-        cell.progressIndicatorView.backgroundColor = projects[indexPath.row].progress.color
+        cell.moduleLabel.text = assignments[indexPath.row].module
+        cell.titleLabel.text = assignments[indexPath.row].title
+        cell.dueDateLabel.text = Utilities.getFormattedDateString(for: assignments[indexPath.row].dueDate, format: "dd/MM/yy")
+        cell.priorityLabel.text = assignments[indexPath.row].level.getAsString()
+        cell.progressIndicatorView.backgroundColor = assignments[indexPath.row].progress.color
         
         return cell
     }
@@ -84,7 +84,7 @@ class MasterViewController: UITableViewController {
     func editAction (at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion) in
             self.isEditView = true
-            self.assignmentPlaceholder = self.projects[indexPath.row]
+            self.assignmentPlaceholder = self.assignments[indexPath.row]
             self.addProjectButton.image = UIImage(named: "edit")
             self.performSegue(withIdentifier: "projectViewSegue", sender: self)
             completion(true)
@@ -97,10 +97,10 @@ class MasterViewController: UITableViewController {
     
     func deleteAction (at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
-            Utilities.showConfirmationAlert(title: "Are you sure?", message: "Delete assignment: " + self.projects[indexPath.row].title!, yesAction: {() in
-                Utilities.getDBContext().delete(self.projects[indexPath.row])
+            Utilities.showConfirmationAlert(title: "Are you sure?", message: "Delete assignment: " + self.assignments[indexPath.row].title!, yesAction: {() in
+                Utilities.getDBContext().delete(self.assignments[indexPath.row])
                 Utilities.saveDBContext()
-                self.projects.remove(at: indexPath.row)
+                self.assignments.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 }, caller: self)
             completion(true)
@@ -111,7 +111,7 @@ class MasterViewController: UITableViewController {
         return action
     }
     
-    func saveProject(_ data: AddEditAssignmentViewController) {
+    func saveAssignment(_ data: AddEditAssignmentViewController) {
         if let assignment = assignmentPlaceholder {
             assignment.module = data.moduleTextField.text!
             assignment.title = data.titleTextField.text!
@@ -127,8 +127,8 @@ class MasterViewController: UITableViewController {
                 assignment.isAddedToCalendar = true
             }
 
-            if let projectIndex = projects.firstIndex(where: {$0.assignmentId == assignment.assignmentId}) {
-                projects[projectIndex] = assignment
+            if let assignmentsIndex = assignments.firstIndex(where: {$0.assignmentId == assignment.assignmentId}) {
+                assignments[assignmentsIndex] = assignment
             }
         } else {
             let assignment = Assignment(context: Utilities.getDBContext())
@@ -146,7 +146,7 @@ class MasterViewController: UITableViewController {
                 assignment.isAddedToCalendar = true
             }
 
-            self.projects.append(assignment)
+            self.assignments.append(assignment)
 
         }
         Utilities.saveDBContext()
