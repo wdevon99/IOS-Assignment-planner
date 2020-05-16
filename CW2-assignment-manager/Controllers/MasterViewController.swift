@@ -27,7 +27,7 @@ class MasterViewController: UITableViewController {
     
     weak var delegate: ProjectSelectionDelegate?
     var projects: [Assignment]!
-    var projectPlaceholder: Assignment?
+    var assignmentPlaceholder: Assignment?
     var isEditView: Bool = false
 
     override func viewDidLoad() {
@@ -40,14 +40,14 @@ class MasterViewController: UITableViewController {
             let popover = segue.destination as? AddEditAssignmentViewController
             
             popover?.isEditView = isEditView ? true : false
-            popover?.projectPlaceholder = projectPlaceholder
+            popover?.assignmentPlaceholder = assignmentPlaceholder
             popover?.delegate = self
             popover?.saveFunction = {(popoverViewController) in
                 self.saveProject(popoverViewController as! AddEditAssignmentViewController)
             }
             popover?.resetToDefaults = { () in
                 self.isEditView = false
-                self.projectPlaceholder = nil
+                self.assignmentPlaceholder = nil
                 self.addProjectButton.image = UIImage(named: "add")
             }
         }
@@ -84,7 +84,7 @@ class MasterViewController: UITableViewController {
     func editAction (at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion) in
             self.isEditView = true
-            self.projectPlaceholder = self.projects[indexPath.row]
+            self.assignmentPlaceholder = self.projects[indexPath.row]
             self.addProjectButton.image = UIImage(named: "edit")
             self.performSegue(withIdentifier: "projectViewSegue", sender: self)
             completion(true)
@@ -110,7 +110,7 @@ class MasterViewController: UITableViewController {
     }
     
     func saveProject(_ data: AddEditAssignmentViewController) {
-        if let assignment = projectPlaceholder {
+        if let assignment = assignmentPlaceholder {
             assignment.title = data.titleTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!

@@ -19,7 +19,7 @@ class AddEditAssignmentViewController: UIViewController {
     
     var saveFunction: Utilities.saveFunctionType?
     var resetToDefaults: Utilities.resetToDefaultsFunctionType?
-    var projectPlaceholder: Assignment?
+    var assignmentPlaceholder: Assignment?
     var isEditView: Bool?
     var startDate: Date?
     var dueDate: Date?
@@ -37,7 +37,7 @@ class AddEditAssignmentViewController: UIViewController {
         
         datePicker.date = startDate!
         
-        if let assignment = projectPlaceholder  {
+        if let assignment = assignmentPlaceholder  {
             titleTextField.text = assignment.title
             notesTextField.text = assignment.notes
             datePicker.date = assignment.startDate
