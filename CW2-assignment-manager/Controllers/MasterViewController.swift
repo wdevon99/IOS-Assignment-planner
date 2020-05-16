@@ -114,7 +114,7 @@ class MasterViewController: UITableViewController {
             assignment.title = data.titleTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
-            assignment.level = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
+            assignment.level = assignPriority(for: data.levelSegmentControl.selectedSegmentIndex)
             assignment.notes = data.notesTextField.text!
 
             if !assignment.isAddedToCalendar && data.addToCalendarToggle.isOn {
@@ -130,7 +130,7 @@ class MasterViewController: UITableViewController {
             assignment.title = data.titleTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
-            assignment.level = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
+            assignment.level = assignPriority(for: data.levelSegmentControl.selectedSegmentIndex)
             assignment.notes = data.notesTextField.text!
 
             if data.addToCalendarToggle.isOn {

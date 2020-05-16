@@ -649,7 +649,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nx6-Wb-MY7">
                                                 <rect key="frame" x="15" y="20" width="290" height="870"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-bJ-Zqb">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-bJ-Zqb">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="24"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -717,7 +717,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXZ-Pg-CdN">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXZ-Pg-CdN">
                                                                 <rect key="frame" x="0.0" y="35" width="290" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -733,7 +733,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-70-iGm">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-70-iGm">
                                                                 <rect key="frame" x="0.0" y="35" width="290" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -863,9 +863,12 @@
                         <outlet property="addToCalendarToggle" destination="iW2-RY-TcW" id="ZKu-rb-kX8"/>
                         <outlet property="datePicker" destination="8UX-8K-gOb" id="M9d-Os-FgA"/>
                         <outlet property="dateSegmentControl" destination="nbk-nA-fOL" id="p6W-P5-SQQ"/>
+                        <outlet property="levelSegmentControl" destination="5uc-cA-72C" id="nlL-3v-3Mh"/>
+                        <outlet property="markAwardedTextField" destination="fTz-70-iGm" id="sbp-BC-Woc"/>
+                        <outlet property="moduleTextField" destination="9cy-Rl-j67" id="6DE-uc-dv8"/>
                         <outlet property="notesTextField" destination="y7x-kd-PmH" id="5Mw-XG-fbV"/>
-                        <outlet property="prioritySegmentControl" destination="5uc-cA-72C" id="f7B-Zf-tYD"/>
                         <outlet property="titleTextField" destination="z09-Wi-CPP" id="4Wx-CZ-ruN"/>
+                        <outlet property="valueTextField" destination="oXZ-Pg-CdN" id="Z7B-Kc-Le3"/>
                         <outlet property="viewTitleLabel" destination="4Nm-bJ-Zqb" id="qSV-1o-piG"/>
                     </connections>
                 </viewController>

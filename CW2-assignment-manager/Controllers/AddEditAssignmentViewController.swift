@@ -9,11 +9,18 @@
 import UIKit
 
 class AddEditAssignmentViewController: UIViewController {
+    
+    // ===== NEW =======
+    @IBOutlet weak var moduleTextField: UITextField!
+    @IBOutlet weak var valueTextField: UITextField!
+    @IBOutlet weak var markAwardedTextField: UITextField!
+    // =================
+    
     @IBOutlet weak var viewTitleLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var prioritySegmentControl: UISegmentedControl!
+    @IBOutlet weak var levelSegmentControl: UISegmentedControl!
     @IBOutlet weak var addToCalendarToggle: UISwitch!
     @IBOutlet weak var dateSegmentControl: UISegmentedControl!
     
@@ -41,7 +48,7 @@ class AddEditAssignmentViewController: UIViewController {
             titleTextField.text = assignment.title
             notesTextField.text = assignment.notes
             datePicker.date = assignment.startDate
-            prioritySegmentControl.selectedSegmentIndex = assignment.level.rawValue
+            levelSegmentControl.selectedSegmentIndex = assignment.level.rawValue
             addToCalendarToggle.isOn = !assignment.isAddedToCalendar
             addToCalendarToggle.isEnabled = !assignment.isAddedToCalendar
             
