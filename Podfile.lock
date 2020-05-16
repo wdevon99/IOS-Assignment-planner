@@ -7,7 +7,7 @@ DEPENDENCIES:
   - YLProgressBar (~> 3.11.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - CircleProgressBar
     - YLProgressBar
 
@@ -15,6 +15,6 @@ SPEC CHECKSUMS:
   CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
   YLProgressBar: 0c0796a6e9b5e5d5040d15c8911e802b67ccb939
 
-PODFILE CHECKSUM: f7db4564e9bf580e163857e7cd9025c98a47e2e2
+PODFILE CHECKSUM: da889f379d50406b7eacb522141c5647b8338142
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.1

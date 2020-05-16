@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_project_managerVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_project_managerVersionString[];
+FOUNDATION_EXPORT double Pods_CW2_assignment_managerVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CW2_assignment_managerVersionString[];
 

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/devon/Desktop/IIT/Courseworks/Ios/Coursework 2/Old/devon-project-manager-master/CW2-assignment-manager.xcodeproj">
+      location = "group:CW2-assignment-manager.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
