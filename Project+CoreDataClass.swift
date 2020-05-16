@@ -1,11 +1,13 @@
 //
-//  Project.swift
-//  project-manager
+//  Project+CoreDataClass.swift
+//  CW2-assignment-manager
 //
 //  Created by Devon Wijesinghe on 5/16/20.
-//  Copyright © 20202 Devon Wijesinghe. All rights reserved.
+//  Copyright © 2020 Devon Wijesinghe. All rights reserved.
+//
 //
 
+import Foundation
 import UIKit
 import CoreData
 

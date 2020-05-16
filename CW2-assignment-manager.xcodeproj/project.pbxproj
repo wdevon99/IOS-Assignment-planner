@@ -3,19 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00321B6D246FE75C00FDB501 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00321B6B246FE75C00FDB501 /* data.xcdatamodeld */; };
+		00321B7A246FEA6300FDB501 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00321B76246FEA6300FDB501 /* Project+CoreDataClass.swift */; };
+		00321B7C246FEA6300FDB501 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00321B78246FEA6300FDB501 /* Task+CoreDataClass.swift */; };
 		60CE68ADE1D1E62143E67ED8 /* Pods_CW2_assignment_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7724A57C3A0C43554E431EA /* Pods_CW2_assignment_manager.framework */; };
 		744487262293EB400006A7CE /* AddEditProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744487252293EB400006A7CE /* AddEditProjectViewController.swift */; };
 		7458D54E2291B39E00FF7784 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7458D54D2291B39E00FF7784 /* Commons.swift */; };
-		74D3C1932299D35E0067A64E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3C1922299D35E0067A64E /* Project.swift */; };
-		74D3C1952299E0190067A64E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3C1942299E0190067A64E /* Task.swift */; };
 		74E1905922987C93009C12D3 /* AddEditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */; };
 		74E5552F228D8C0F00B94C58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5552E228D8C0F00B94C58 /* AppDelegate.swift */; };
 		74E55534228D8C0F00B94C58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E55532228D8C0F00B94C58 /* Main.storyboard */; };
-		74E55537228D8C0F00B94C58 /* project_manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74E55535228D8C0F00B94C58 /* project_manager.xcdatamodeld */; };
 		74E55539228D8C1000B94C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E55538228D8C1000B94C58 /* Assets.xcassets */; };
 		74E5553C228D8C1000B94C58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E5553A228D8C1000B94C58 /* LaunchScreen.storyboard */; };
 		74E55544228D8EFF00B94C58 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E55543228D8EFF00B94C58 /* MasterViewController.swift */; };
@@ -23,18 +23,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00321B6C246FE75C00FDB501 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
+		00321B76246FEA6300FDB501 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		00321B78246FEA6300FDB501 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		155BE5452E9308832EA369B4 /* Pods-project-manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project-manager.debug.xcconfig"; path = "Target Support Files/Pods-project-manager/Pods-project-manager.debug.xcconfig"; sourceTree = "<group>"; };
 		4A9994AF56B7DEDAF44EEC63 /* Pods-CW2-assignment-manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CW2-assignment-manager.debug.xcconfig"; path = "Target Support Files/Pods-CW2-assignment-manager/Pods-CW2-assignment-manager.debug.xcconfig"; sourceTree = "<group>"; };
 		5B910C753DCC96B05531E727 /* Pods-project-manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project-manager.release.xcconfig"; path = "Target Support Files/Pods-project-manager/Pods-project-manager.release.xcconfig"; sourceTree = "<group>"; };
 		744487252293EB400006A7CE /* AddEditProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProjectViewController.swift; sourceTree = "<group>"; };
 		7458D54D2291B39E00FF7784 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
-		74D3C1922299D35E0067A64E /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		74D3C1942299E0190067A64E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTaskViewController.swift; sourceTree = "<group>"; };
 		74E5552B228D8C0F00B94C58 /* CW2-assignment-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CW2-assignment-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E5552E228D8C0F00B94C58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E55533228D8C0F00B94C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		74E55536228D8C0F00B94C58 /* project_manager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = project_manager.xcdatamodel; sourceTree = "<group>"; };
 		74E55538228D8C1000B94C58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74E5553B228D8C1000B94C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74E5553D228D8C1000B94C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,9 +119,9 @@
 		74E55547228DF5C800B94C58 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				74E55535228D8C0F00B94C58 /* project_manager.xcdatamodeld */,
-				74D3C1922299D35E0067A64E /* Project.swift */,
-				74D3C1942299E0190067A64E /* Task.swift */,
+				00321B76246FEA6300FDB501 /* Project+CoreDataClass.swift */,
+				00321B78246FEA6300FDB501 /* Task+CoreDataClass.swift */,
+				00321B6B246FE75C00FDB501 /* data.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,15 +260,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E55537228D8C0F00B94C58 /* project_manager.xcdatamodeld in Sources */,
 				74E5552F228D8C0F00B94C58 /* AppDelegate.swift in Sources */,
 				74E1905922987C93009C12D3 /* AddEditTaskViewController.swift in Sources */,
+				00321B6D246FE75C00FDB501 /* data.xcdatamodeld in Sources */,
+				00321B7A246FEA6300FDB501 /* Project+CoreDataClass.swift in Sources */,
 				7458D54E2291B39E00FF7784 /* Commons.swift in Sources */,
 				74E55544228D8EFF00B94C58 /* MasterViewController.swift in Sources */,
 				744487262293EB400006A7CE /* AddEditProjectViewController.swift in Sources */,
 				74E55546228D90DC00B94C58 /* DetailViewController.swift in Sources */,
-				74D3C1952299E0190067A64E /* Task.swift in Sources */,
-				74D3C1932299D35E0067A64E /* Project.swift in Sources */,
+				00321B7C246FEA6300FDB501 /* Task+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,13 +474,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		74E55535228D8C0F00B94C58 /* project_manager.xcdatamodeld */ = {
+		00321B6B246FE75C00FDB501 /* data.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				74E55536228D8C0F00B94C58 /* project_manager.xcdatamodel */,
+				00321B6C246FE75C00FDB501 /* data.xcdatamodel */,
 			);
-			currentVersion = 74E55536228D8C0F00B94C58 /* project_manager.xcdatamodel */;
-			path = project_manager.xcdatamodeld;
+			currentVersion = 00321B6C246FE75C00FDB501 /* data.xcdatamodel */;
+			path = data.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
