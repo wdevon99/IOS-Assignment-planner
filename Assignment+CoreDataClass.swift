@@ -78,7 +78,7 @@ public class Assignment: NSManagedObject {
 
 extension Assignment {
     override public func awakeFromInsert() {
-        setPrimitiveValue(UUID().uuidString, forKey: "projectId")
+        setPrimitiveValue(UUID().uuidString, forKey: "assignmentId")
     }
 }
 

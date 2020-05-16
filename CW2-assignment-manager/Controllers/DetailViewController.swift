@@ -71,7 +71,7 @@ class DetailViewController: UIViewController {
         addTaskButton.isEnabled = false
         
         if let selectedProject = assignment {
-            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.projectId = %@", selectedProject.projectId!))
+            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.assignmentId = %@", selectedProject.assignmentId!))
         } else {
             tasks = Array()
         }
@@ -176,7 +176,7 @@ class DetailViewController: UIViewController {
             daysRemainingCircleView.setProgress(selectedProject.daysRemaining.value, animated: true, duration: 1)
             daysRemainingCircleView.progressBarTrackColor = selectedProject.daysRemaining.color
             daysRemainingCircleView.progressBarProgressColor = selectedProject.daysRemaining.color
-            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.projectId = %@", selectedProject.projectId!))
+            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.assignmentId = %@", selectedProject.assignmentId!))
             tasksTableView.reloadData()
             addTaskButton.isEnabled = true
         }

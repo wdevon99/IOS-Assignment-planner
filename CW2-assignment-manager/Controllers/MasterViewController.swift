@@ -122,7 +122,7 @@ class MasterViewController: UITableViewController {
                 assignment.isAddedToCalendar = true
             }
 
-            if let projectIndex = projects.firstIndex(where: {$0.projectId == assignment.projectId}) {
+            if let projectIndex = projects.firstIndex(where: {$0.assignmentId == assignment.assignmentId}) {
                 projects[projectIndex] = assignment
             }
         } else {
