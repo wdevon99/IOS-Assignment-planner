@@ -14,6 +14,7 @@ protocol ProjectSelectionDelegate: class {
 }
 
 class ProjectCell: UITableViewCell {
+    @IBOutlet weak var moduleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
@@ -66,6 +67,7 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell") as! ProjectCell
         
+        cell.moduleLabel.text = projects[indexPath.row].module
         cell.titleLabel.text = projects[indexPath.row].title
         cell.dueDateLabel.text = Utilities.getFormattedDateString(for: projects[indexPath.row].dueDate, format: "dd/MM/yy")
         cell.priorityLabel.text = projects[indexPath.row].level.getAsString()
@@ -113,6 +115,8 @@ class MasterViewController: UITableViewController {
         if let assignment = assignmentPlaceholder {
             assignment.module = data.moduleTextField.text!
             assignment.title = data.titleTextField.text!
+            assignment.value = data.valueTextField.text!
+            assignment.markAwarded = data.markAwardedTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
             assignment.level = assignPriority(for: data.levelSegmentControl.selectedSegmentIndex)
@@ -130,6 +134,8 @@ class MasterViewController: UITableViewController {
             let assignment = Assignment(context: Utilities.getDBContext())
             assignment.module = data.moduleTextField.text!
             assignment.title = data.titleTextField.text!
+            assignment.value = data.valueTextField.text!
+            assignment.markAwarded = data.markAwardedTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
             assignment.level = assignPriority(for: data.levelSegmentControl.selectedSegmentIndex)

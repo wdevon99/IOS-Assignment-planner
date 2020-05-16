@@ -10,11 +10,9 @@ import UIKit
 
 class AddEditAssignmentViewController: UIViewController {
     
-    // ===== NEW =======
     @IBOutlet weak var moduleTextField: UITextField!
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var markAwardedTextField: UITextField!
-    // =================
     
     @IBOutlet weak var viewTitleLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
@@ -47,6 +45,8 @@ class AddEditAssignmentViewController: UIViewController {
         if let assignment = assignmentPlaceholder  {
             moduleTextField.text = assignment.module
             titleTextField.text = assignment.title
+            valueTextField.text = assignment.value
+            markAwardedTextField.text = assignment.markAwarded
             notesTextField.text = assignment.notes
             datePicker.date = assignment.startDate
             levelSegmentControl.selectedSegmentIndex = assignment.level.rawValue
