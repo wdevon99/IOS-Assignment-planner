@@ -32,6 +32,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var daysRemainingCircleView: CircleProgressBar!
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var addTaskButton: UIButton!
+    
+    // ==== NEW ====
+    @IBOutlet weak var moduleLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    // =============
+    
     @IBOutlet weak var projectTitleLabel: UILabel!
     @IBOutlet weak var projectMetaLabel: UILabel!
     @IBOutlet weak var projectNotesLabel: UILabel!
@@ -168,8 +174,10 @@ class DetailViewController: UIViewController {
         loadViewIfNeeded()
         if let selectedProject = assignment {
             
+            moduleLabel.text = selectedProject.module
             projectTitleLabel.text = selectedProject.title
-            projectMetaLabel.text = (selectedProject.level.getAsString()) + " Level | Due " + Utilities.getFormattedDateString(for: selectedProject.dueDate, format: "yyyy-MM-dd")
+            levelLabel.text = "Level " + selectedProject.level.getAsString()
+            projectMetaLabel.text = "Value: " + selectedProject.value! + " | Mark Awarded: " + selectedProject.markAwarded!
             projectNotesLabel.text = "Notes: " + selectedProject.notes!
             percentageCircleView.setProgress(CGFloat(selectedProject.progress.value), animated: true, duration: 1)
             percentageCircleView.progressBarProgressColor = selectedProject.progress.color
