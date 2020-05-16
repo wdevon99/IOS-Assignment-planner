@@ -45,6 +45,7 @@ class AddEditAssignmentViewController: UIViewController {
         datePicker.date = startDate!
         
         if let assignment = assignmentPlaceholder  {
+            moduleTextField.text = assignment.module
             titleTextField.text = assignment.title
             notesTextField.text = assignment.notes
             datePicker.date = assignment.startDate
@@ -55,7 +56,7 @@ class AddEditAssignmentViewController: UIViewController {
             startDate = assignment.startDate
             dueDate = assignment.dueDate
         }
-        titleTextField.becomeFirstResponder()
+        moduleTextField.becomeFirstResponder()
     }
     
     
@@ -95,7 +96,11 @@ class AddEditAssignmentViewController: UIViewController {
     }
     
     func validateFields() -> Bool {
-        if titleTextField.text == "" {
+
+        if moduleTextField.text == "" {
+            Utilities.showInformationAlert(title: "Error", message: "Module name can't be empty", caller: self)
+            return false
+        } else if titleTextField.text == "" {
             Utilities.showInformationAlert(title: "Error", message: "Assignment name can't be empty", caller: self)
             return false
         } else if startDate! > dueDate! {

@@ -111,6 +111,7 @@ class MasterViewController: UITableViewController {
     
     func saveProject(_ data: AddEditAssignmentViewController) {
         if let assignment = assignmentPlaceholder {
+            assignment.module = data.moduleTextField.text!
             assignment.title = data.titleTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
@@ -127,6 +128,7 @@ class MasterViewController: UITableViewController {
             }
         } else {
             let assignment = Assignment(context: Utilities.getDBContext())
+            assignment.module = data.moduleTextField.text!
             assignment.title = data.titleTextField.text!
             assignment.startDate = data.startDate!
             assignment.dueDate = data.dueDate!
