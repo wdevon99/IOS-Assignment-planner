@@ -32,7 +32,7 @@
 		744487252293EB400006A7CE /* AddEditAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditAssignmentViewController.swift; sourceTree = "<group>"; };
 		7458D54D2291B39E00FF7784 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTaskViewController.swift; sourceTree = "<group>"; };
-		74E5552B228D8C0F00B94C58 /* CW2-assignment-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CW2-assignment-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74E5552B228D8C0F00B94C58 /* My Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E5552E228D8C0F00B94C58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E55533228D8C0F00B94C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74E55538228D8C1000B94C58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		74E5552C228D8C0F00B94C58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74E5552B228D8C0F00B94C58 /* CW2-assignment-manager.app */,
+				74E5552B228D8C0F00B94C58 /* My Planner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			);
 			name = "CW2-assignment-manager";
 			productName = "project-manager";
-			productReference = 74E5552B228D8C0F00B94C58 /* CW2-assignment-manager.app */;
+			productReference = 74E5552B228D8C0F00B94C58 /* My Planner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -424,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devon.CW2-assignment-manager";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "My Planner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devon.CW2-assignment-manager";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "My Planner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
