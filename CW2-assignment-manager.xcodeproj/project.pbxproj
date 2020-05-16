@@ -54,6 +54,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00321B5C246FC6E800FDB501 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74E5553A228D8C1000B94C58 /* LaunchScreen.storyboard */,
+				74E55532228D8C0F00B94C58 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		00321B5D246FC6F500FDB501 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				744487252293EB400006A7CE /* AddEditProjectViewController.swift */,
+				74E55545228D90DC00B94C58 /* DetailViewController.swift */,
+				74E55543228D8EFF00B94C58 /* MasterViewController.swift */,
+				74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		00321B5E246FC71C00FDB501 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7458D54D2291B39E00FF7784 /* Commons.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		74E55522228D8C0F00B94C58 = {
 			isa = PBXGroup;
 			children = (
@@ -75,18 +103,13 @@
 		74E5552D228D8C0F00B94C58 /* CW2-assignment-manager */ = {
 			isa = PBXGroup;
 			children = (
+				00321B5E246FC71C00FDB501 /* Helpers */,
+				00321B5D246FC6F500FDB501 /* Controllers */,
+				00321B5C246FC6E800FDB501 /* Views */,
 				74E55547228DF5C800B94C58 /* Models */,
 				74E5552E228D8C0F00B94C58 /* AppDelegate.swift */,
-				744487252293EB400006A7CE /* AddEditProjectViewController.swift */,
-				7458D54D2291B39E00FF7784 /* Commons.swift */,
-				74E55543228D8EFF00B94C58 /* MasterViewController.swift */,
-				74E55532228D8C0F00B94C58 /* Main.storyboard */,
-				74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */,
 				74E55538228D8C1000B94C58 /* Assets.xcassets */,
-				74E5553A228D8C1000B94C58 /* LaunchScreen.storyboard */,
 				74E5553D228D8C1000B94C58 /* Info.plist */,
-				74E55535228D8C0F00B94C58 /* project_manager.xcdatamodeld */,
-				74E55545228D90DC00B94C58 /* DetailViewController.swift */,
 			);
 			path = "CW2-assignment-manager";
 			sourceTree = "<group>";
@@ -94,6 +117,7 @@
 		74E55547228DF5C800B94C58 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				74E55535228D8C0F00B94C58 /* project_manager.xcdatamodeld */,
 				74D3C1922299D35E0067A64E /* Project.swift */,
 				74D3C1942299E0190067A64E /* Task.swift */,
 			);
@@ -147,7 +171,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Gayashan Bombuwala";
+				ORGANIZATIONNAME = "Devon Wijesinghe";
 				TargetAttributes = {
 					74E5552A228D8C0F00B94C58 = {
 						CreatedOnToolsVersion = 10.2.1;

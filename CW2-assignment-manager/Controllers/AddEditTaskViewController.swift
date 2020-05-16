@@ -2,8 +2,8 @@
 //  AddEditTaskViewController.swift
 //  project-manager
 //
-//  Created by Gayashan Bombuwala on 5/25/19.
-//  Copyright © 2019 Gayashan Bombuwala. All rights reserved.
+//  Created by Devon Wijesinghe on 5/16/20.
+//  Copyright © 20202 Devon Wijesinghe. All rights reserved.
 //
 
 import UIKit
