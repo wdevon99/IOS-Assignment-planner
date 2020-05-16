@@ -145,7 +145,7 @@ class DetailViewController: UIViewController {
         }
         
         let content = UNMutableNotificationContent()
-        content.title = "Project: " + task.assignment!.title!
+        content.title = "Assignment: " + task.assignment!.title!
         content.body = "The following task has not been completed on time.\nTask: " + task.title! + "\nDue Date: " + Utilities.getFormattedDateString(for: task.dueDate, format: "yyyy-MM-dd")
         
         

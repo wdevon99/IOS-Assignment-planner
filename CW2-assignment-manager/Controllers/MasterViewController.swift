@@ -197,6 +197,6 @@ extension MasterViewController: ItemActionDelegate {
     }
     
     func itemEdited(title: String) {
-        Utilities.showInformationAlert(title: "Alert", message: "Project: \(title)\nSuccessfully Edited", caller: self)
+        Utilities.showInformationAlert(title: "Alert", message: "Assignment: \(title)\nSuccessfully Edited", caller: self)
     }
 }

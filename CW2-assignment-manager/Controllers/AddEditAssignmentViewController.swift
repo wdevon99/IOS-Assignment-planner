@@ -30,7 +30,7 @@ class AddEditAssignmentViewController: UIViewController {
         guard let isEditMode = isEditView else { return }
         
         datePicker.timeZone = TimeZone(identifier: "UTC")
-        viewTitleLabel.text = isEditMode ? "Edit Project" : "Add Project"
+        viewTitleLabel.text = isEditMode ? "Edit Assignment" : "Add Assignment"
 
         startDate = Calendar.current.date(bySetting: .hour, value: 0, of: Date())
         dueDate = Calendar.current.date(bySetting: .hour, value: 1, of: Date())
@@ -89,10 +89,10 @@ class AddEditAssignmentViewController: UIViewController {
     
     func validateFields() -> Bool {
         if titleTextField.text == "" {
-            Utilities.showInformationAlert(title: "Error", message: "Project name can't be empty", caller: self)
+            Utilities.showInformationAlert(title: "Error", message: "Assignment name can't be empty", caller: self)
             return false
         } else if startDate! > dueDate! {
-            Utilities.showInformationAlert(title: "Error", message: "Project start date must be before the due date", caller: self)
+            Utilities.showInformationAlert(title: "Error", message: "Assignment start date must be before the due date", caller: self)
             return false
         }
         return true
