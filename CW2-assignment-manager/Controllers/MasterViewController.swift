@@ -18,7 +18,6 @@ class ProjectCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
-    @IBOutlet weak var notesLabel: UILabel!
     @IBOutlet weak var progressIndicatorView: UIView!
 }
 
@@ -71,7 +70,6 @@ class MasterViewController: UITableViewController {
         cell.titleLabel.text = projects[indexPath.row].title
         cell.dueDateLabel.text = Utilities.getFormattedDateString(for: projects[indexPath.row].dueDate, format: "dd/MM/yy")
         cell.priorityLabel.text = projects[indexPath.row].level.getAsString()
-        cell.notesLabel.text = projects[indexPath.row].notes
         cell.progressIndicatorView.backgroundColor = projects[indexPath.row].progress.color
         
         return cell
