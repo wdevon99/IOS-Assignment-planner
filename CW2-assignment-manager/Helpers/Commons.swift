@@ -86,13 +86,13 @@ class Utilities {
     
     static func getColorFor(value: Float) -> UIColor {
         if value >= 0 && value <= 25 {
-            return .red
+            return .systemRed
         } else if value > 25 && value <= 50 {
-            return .orange
+            return .systemOrange
         } else if value > 50 && value <= 75 {
-            return .green
+            return .systemGreen
         } else {
-            return .blue
+            return .systemBlue
         }
     }
     
