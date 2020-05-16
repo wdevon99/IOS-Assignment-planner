@@ -26,7 +26,7 @@ enum ProjectPriority: Int {
     }
 }
 
-@objc(Project)
+@objc(Assignment)
 public class Assignment: NSManagedObject {
     
     var startDate: Date {

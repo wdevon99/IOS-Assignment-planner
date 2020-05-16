@@ -36,14 +36,14 @@ class MasterViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is AddEditProjectViewController {
-            let popover = segue.destination as? AddEditProjectViewController
+        if segue.destination is AddEditAssignmentViewController {
+            let popover = segue.destination as? AddEditAssignmentViewController
             
             popover?.isEditView = isEditView ? true : false
             popover?.projectPlaceholder = projectPlaceholder
             popover?.delegate = self
             popover?.saveFunction = {(popoverViewController) in
-                self.saveProject(popoverViewController as! AddEditProjectViewController)
+                self.saveProject(popoverViewController as! AddEditAssignmentViewController)
             }
             popover?.resetToDefaults = { () in
                 self.isEditView = false
@@ -96,7 +96,7 @@ class MasterViewController: UITableViewController {
     
     func deleteAction (at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
-            Utilities.showConfirmationAlert(title: "Are you sure?", message: "Delete project: " + self.projects[indexPath.row].title!, yesAction: {() in
+            Utilities.showConfirmationAlert(title: "Are you sure?", message: "Delete assignment: " + self.projects[indexPath.row].title!, yesAction: {() in
                 Utilities.getDBContext().delete(self.projects[indexPath.row])
                 Utilities.saveDBContext()
                 self.projects.remove(at: indexPath.row)
@@ -109,36 +109,36 @@ class MasterViewController: UITableViewController {
         return action
     }
     
-    func saveProject(_ data: AddEditProjectViewController) {
-        if let project = projectPlaceholder {
-            project.title = data.titleTextField.text!
-            project.startDate = data.startDate!
-            project.dueDate = data.dueDate!
-            project.priority = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
-            project.notes = data.notesTextField.text!
+    func saveProject(_ data: AddEditAssignmentViewController) {
+        if let assignment = projectPlaceholder {
+            assignment.title = data.titleTextField.text!
+            assignment.startDate = data.startDate!
+            assignment.dueDate = data.dueDate!
+            assignment.priority = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
+            assignment.notes = data.notesTextField.text!
 
-            if !project.isAddedToCalendar && data.addToCalendarToggle.isOn {
-                addEventToCalendar(for: project)
-                project.isAddedToCalendar = true
+            if !assignment.isAddedToCalendar && data.addToCalendarToggle.isOn {
+                addEventToCalendar(for: assignment)
+                assignment.isAddedToCalendar = true
             }
 
-            if let projectIndex = projects.firstIndex(where: {$0.projectId == project.projectId}) {
-                projects[projectIndex] = project
+            if let projectIndex = projects.firstIndex(where: {$0.projectId == assignment.projectId}) {
+                projects[projectIndex] = assignment
             }
         } else {
-            let project = Assignment(context: Utilities.getDBContext())
-            project.title = data.titleTextField.text!
-            project.startDate = data.startDate!
-            project.dueDate = data.dueDate!
-            project.priority = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
-            project.notes = data.notesTextField.text!
+            let assignment = Assignment(context: Utilities.getDBContext())
+            assignment.title = data.titleTextField.text!
+            assignment.startDate = data.startDate!
+            assignment.dueDate = data.dueDate!
+            assignment.priority = assignPriority(for: data.prioritySegmentControl.selectedSegmentIndex)
+            assignment.notes = data.notesTextField.text!
 
             if data.addToCalendarToggle.isOn {
-                addEventToCalendar(for: project)
-                project.isAddedToCalendar = true
+                addEventToCalendar(for: assignment)
+                assignment.isAddedToCalendar = true
             }
 
-            self.projects.append(project)
+            self.projects.append(assignment)
 
         }
         Utilities.saveDBContext()
@@ -156,17 +156,17 @@ class MasterViewController: UITableViewController {
         }
     }
     
-    func addEventToCalendar (for project: Assignment) {
+    func addEventToCalendar (for assignment: Assignment) {
         let eventStore : EKEventStore = EKEventStore()
 
         eventStore.requestAccess(to: .event) { (granted, error) in
             if (granted) && (error == nil) {
                 let event: EKEvent = EKEvent(eventStore: eventStore)
                 
-                event.title = project.title
-                event.startDate = project.startDate
-                event.endDate = project.dueDate
-                event.notes = project.notes
+                event.title = assignment.title
+                event.startDate = assignment.startDate
+                event.endDate = assignment.dueDate
+                event.notes = assignment.notes
                 event.calendar = eventStore.defaultCalendarForNewEvents 
                 
                 do {
@@ -193,7 +193,7 @@ extension MasterViewController: TasksChangedDelegate {
 
 extension MasterViewController: ItemActionDelegate {
     func itemAdded(title: String) {
-        Utilities.showInformationAlert(title: "Alert", message: "New project: \(title)\nSuccessfully Added", caller: self)
+        Utilities.showInformationAlert(title: "Alert", message: "New assignment: \(title)\nSuccessfully Added", caller: self)
     }
     
     func itemEdited(title: String) {

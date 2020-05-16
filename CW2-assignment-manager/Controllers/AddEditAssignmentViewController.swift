@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEditProjectViewController: UIViewController {
+class AddEditAssignmentViewController: UIViewController {
     @IBOutlet weak var viewTitleLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var notesTextField: UITextField!
@@ -37,16 +37,16 @@ class AddEditProjectViewController: UIViewController {
         
         datePicker.date = startDate!
         
-        if let project = projectPlaceholder  {
-            titleTextField.text = project.title
-            notesTextField.text = project.notes
-            datePicker.date = project.startDate
-            prioritySegmentControl.selectedSegmentIndex = project.priority.rawValue
-            addToCalendarToggle.isOn = !project.isAddedToCalendar
-            addToCalendarToggle.isEnabled = !project.isAddedToCalendar
+        if let assignment = projectPlaceholder  {
+            titleTextField.text = assignment.title
+            notesTextField.text = assignment.notes
+            datePicker.date = assignment.startDate
+            prioritySegmentControl.selectedSegmentIndex = assignment.priority.rawValue
+            addToCalendarToggle.isOn = !assignment.isAddedToCalendar
+            addToCalendarToggle.isEnabled = !assignment.isAddedToCalendar
             
-            startDate = project.startDate
-            dueDate = project.dueDate
+            startDate = assignment.startDate
+            dueDate = assignment.dueDate
         }
         titleTextField.becomeFirstResponder()
     }

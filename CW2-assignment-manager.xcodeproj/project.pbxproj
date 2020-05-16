@@ -11,7 +11,7 @@
 		00321B7C246FEA6300FDB501 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00321B78246FEA6300FDB501 /* Task+CoreDataClass.swift */; };
 		00321B86246FEF2000FDB501 /* Assignment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00321B83246FEF2000FDB501 /* Assignment+CoreDataClass.swift */; };
 		60CE68ADE1D1E62143E67ED8 /* Pods_CW2_assignment_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7724A57C3A0C43554E431EA /* Pods_CW2_assignment_manager.framework */; };
-		744487262293EB400006A7CE /* AddEditProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744487252293EB400006A7CE /* AddEditProjectViewController.swift */; };
+		744487262293EB400006A7CE /* AddEditAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744487252293EB400006A7CE /* AddEditAssignmentViewController.swift */; };
 		7458D54E2291B39E00FF7784 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7458D54D2291B39E00FF7784 /* Commons.swift */; };
 		74E1905922987C93009C12D3 /* AddEditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */; };
 		74E5552F228D8C0F00B94C58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5552E228D8C0F00B94C58 /* AppDelegate.swift */; };
@@ -29,7 +29,7 @@
 		155BE5452E9308832EA369B4 /* Pods-project-manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project-manager.debug.xcconfig"; path = "Target Support Files/Pods-project-manager/Pods-project-manager.debug.xcconfig"; sourceTree = "<group>"; };
 		4A9994AF56B7DEDAF44EEC63 /* Pods-CW2-assignment-manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CW2-assignment-manager.debug.xcconfig"; path = "Target Support Files/Pods-CW2-assignment-manager/Pods-CW2-assignment-manager.debug.xcconfig"; sourceTree = "<group>"; };
 		5B910C753DCC96B05531E727 /* Pods-project-manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project-manager.release.xcconfig"; path = "Target Support Files/Pods-project-manager/Pods-project-manager.release.xcconfig"; sourceTree = "<group>"; };
-		744487252293EB400006A7CE /* AddEditProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProjectViewController.swift; sourceTree = "<group>"; };
+		744487252293EB400006A7CE /* AddEditAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditAssignmentViewController.swift; sourceTree = "<group>"; };
 		7458D54D2291B39E00FF7784 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTaskViewController.swift; sourceTree = "<group>"; };
 		74E5552B228D8C0F00B94C58 /* CW2-assignment-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CW2-assignment-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +68,7 @@
 		00321B5D246FC6F500FDB501 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				744487252293EB400006A7CE /* AddEditProjectViewController.swift */,
+				744487252293EB400006A7CE /* AddEditAssignmentViewController.swift */,
 				74E55545228D90DC00B94C58 /* DetailViewController.swift */,
 				74E55543228D8EFF00B94C58 /* MasterViewController.swift */,
 				74E1905822987C93009C12D3 /* AddEditTaskViewController.swift */,
@@ -265,7 +265,7 @@
 				00321B6D246FE75C00FDB501 /* data.xcdatamodeld in Sources */,
 				7458D54E2291B39E00FF7784 /* Commons.swift in Sources */,
 				74E55544228D8EFF00B94C58 /* MasterViewController.swift in Sources */,
-				744487262293EB400006A7CE /* AddEditProjectViewController.swift in Sources */,
+				744487262293EB400006A7CE /* AddEditAssignmentViewController.swift in Sources */,
 				74E55546228D90DC00B94C58 /* DetailViewController.swift in Sources */,
 				00321B86246FEF2000FDB501 /* Assignment+CoreDataClass.swift in Sources */,
 				00321B7C246FEA6300FDB501 /* Task+CoreDataClass.swift in Sources */,

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Required to add the project due date as an event in the Calendar app</string>
+	<string>Required to add the assignment due date as an event in the Calendar app</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

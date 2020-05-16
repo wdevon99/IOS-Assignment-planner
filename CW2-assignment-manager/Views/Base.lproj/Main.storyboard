@@ -8,12 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Project Details-->
+        <!--Assignment Details-->
         <scene sceneID="gfN-Yw-OlL">
             <objects>
-                <viewController title="Project Details" id="uUX-Qs-BzN" customClass="DetailViewController" customModule="CW2_assignment_manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Project Details" id="uUX-Qs-BzN" userLabel="Assignment Details" customClass="DetailViewController" customModule="CW2_assignment_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wb8-LL-F1E">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQK-WU-rdC">
@@ -293,24 +293,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectCell" id="f4V-jE-U9B" customClass="ProjectCell" customModule="CW2_assignment_manager" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="196.5"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="197"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f4V-jE-U9B" id="QuA-77-yeK">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="196.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="197"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F6K-oM-H4I">
-                                            <rect key="frame" x="15" y="15" width="290" height="166.5"/>
+                                            <rect key="frame" x="15" y="15" width="290" height="167"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOv-Ze-RYy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="166.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="167"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="8" id="Lbj-Uf-sZ2"/>
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dUh-E1-E8J">
-                                                    <rect key="frame" x="18" y="0.0" width="272" height="166.5"/>
+                                                    <rect key="frame" x="18" y="0.0" width="272" height="167"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckz-Bm-dVG">
                                                             <rect key="frame" x="0.0" y="0.0" width="71.5" height="24"/>
@@ -370,7 +370,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MUM-QG-wVT">
-                                                            <rect key="frame" x="0.0" y="98.5" width="272" height="68"/>
+                                                            <rect key="frame" x="0.0" y="98.5" width="272" height="68.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYi-0r-Ita">
                                                                     <rect key="frame" x="0.0" y="0.0" width="272" height="20.5"/>
@@ -382,7 +382,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something has to be done on time before it ends" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drK-e1-DqY">
-                                                                    <rect key="frame" x="0.0" y="25.5" width="272" height="42.5"/>
+                                                                    <rect key="frame" x="0.0" y="25.5" width="272" height="43"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -635,7 +635,7 @@
         <!--Add New Project-->
         <scene sceneID="6ko-eX-JSB">
             <objects>
-                <viewController title="Add New Project" id="gaU-PX-hh8" customClass="AddEditProjectViewController" customModule="CW2_assignment_manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add New Project" id="gaU-PX-hh8" customClass="AddEditAssignmentViewController" customModule="CW2_assignment_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wgi-BU-dgo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="581"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

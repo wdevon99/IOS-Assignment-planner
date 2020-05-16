@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
     var tasks: [Task]!
     var taskPlaceholder: Task?
     var isEditView: Bool = false
-    var project: Assignment? {
+    var assignment: Assignment? {
         didSet {
             refreshUI()
         }
@@ -70,8 +70,8 @@ class DetailViewController: UIViewController {
         daysRemainingCircleView.progressBarProgressColor = nil
         addTaskButton.isEnabled = false
         
-        if let selectedProject = project {
-            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "project.projectId = %@", selectedProject.projectId!))
+        if let selectedProject = assignment {
+            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.projectId = %@", selectedProject.projectId!))
         } else {
             tasks = Array()
         }
@@ -120,7 +120,7 @@ class DetailViewController: UIViewController {
                     task.dueDate = data.dueDate!
                     task.progress = data.progressSlider.value / 100
                     task.notes = data.notesTextField.text
-                    task.assignment = project
+                    task.assignment = assignment
             
             if data.addNotificationToggle.isOn {
                 addNotification(for: task)
@@ -166,7 +166,7 @@ class DetailViewController: UIViewController {
     
     func refreshUI() {
         loadViewIfNeeded()
-        if let selectedProject = project {
+        if let selectedProject = assignment {
             
             projectTitleLabel.text = selectedProject.title
             projectMetaLabel.text = (selectedProject.priority.getAsString()) + " Priority | Due " + Utilities.getFormattedDateString(for: selectedProject.dueDate, format: "yyyy-MM-dd")
@@ -176,7 +176,7 @@ class DetailViewController: UIViewController {
             daysRemainingCircleView.setProgress(selectedProject.daysRemaining.value, animated: true, duration: 1)
             daysRemainingCircleView.progressBarTrackColor = selectedProject.daysRemaining.color
             daysRemainingCircleView.progressBarProgressColor = selectedProject.daysRemaining.color
-            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "project.projectId = %@", selectedProject.projectId!))
+            tasks = Utilities.fetchFromDBContext(entityName: "Task", predicate: NSPredicate(format: "assignment.projectId = %@", selectedProject.projectId!))
             tasksTableView.reloadData()
             addTaskButton.isEnabled = true
         }
@@ -257,7 +257,7 @@ extension DetailViewController: UITableViewDelegate {
 
 extension DetailViewController: ProjectSelectionDelegate {
     func projectSelected(_ newProject: Assignment) {
-        project = newProject
+        assignment = newProject
     }
 }
 
